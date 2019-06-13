@@ -18,9 +18,9 @@ $(document).ready(function () {
                 var gifDiv = $("<div>");
                 var gif = $("<img>").addClass("gif");
                 gif.attr("src", results[i].images.fixed_height_still.url);
-                gif.attr("data-still",results[i].images.fixed_height_still.url);
-                gif.attr("data-animate",results[i].images.fixed_height.url)
-                gif.attr("data-state","still")
+                gif.attr("data-still", results[i].images.fixed_height_still.url);
+                gif.attr("data-animate", results[i].images.fixed_height.url);
+                gif.attr("data-state","still");
                 gifDiv.prepend(p);
                 gifDiv.prepend(gif);
                 $("#gifResults").prepend(gifDiv);
@@ -50,16 +50,6 @@ $(document).ready(function () {
 
 
     // function to change state of gif
-    var state = $(this).attr("data-state");
-    $("body").on("click", ".gif", function() {
-        if (state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-        } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        }
-      });
 
       function changeState(){
         var state = $(this).attr("data-state");
